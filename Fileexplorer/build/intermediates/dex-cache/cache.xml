@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\pc\Desktop\Fileexplorer1\Fileexplorer\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3ac76e5468e301e17c288291afce0787fe9ae4e6">
+        <dex dex="C:\Users\pc\Desktop\Fileexplorer1\Fileexplorer\build\intermediates\pre-dexed\debug\instant-run_bae7569a3eb1a2ed3e4e4371a892f19b8292795e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\pc\Desktop\Fileexplorer1\Fileexplorer\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bdc9e2c4990f785ed9df4eac27a31774fbac918b">
+        <dex dex="C:\Users\pc\Desktop\Fileexplorer1\Fileexplorer\build\intermediates\pre-dexed\debug\instant-run-bootstrap_143595c0e3fd49cdf2042cf904effb0750e8366f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\pc\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v13\19.1.0\support-v13-19.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6b852a232f642c75a7fdfc7212b841b8c8f8959c">
+        <dex dex="C:\Users\pc\Desktop\Fileexplorer1\Fileexplorer\build\intermediates\pre-dexed\debug\support-v13-19.1.0_59a3c3b63f96724ba0807d429fbf1dac1bc6ceb8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\pc\Desktop\Fileexplorer1\Fileexplorer\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
+        <dex dex="C:\Users\pc\Desktop\Fileexplorer1\Fileexplorer\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-19.1.0_63ea920a75c302606f3cec5acb7202b0cc1112f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\pc\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="C:\Users\pc\Desktop\Fileexplorer1\Fileexplorer\build\intermediates\pre-dexed\debug\support-v4-19.1.0_4372998f9a06e416dac5b5dc7b254d2426adb48a.jar" />
+    </item>
+
+</items>
