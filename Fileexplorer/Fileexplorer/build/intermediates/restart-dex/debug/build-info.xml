@@ -5,32 +5,32 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="354765200476558"
-    token="-3743648312376298412"
+    timestamp="179628330860789"
+    token="-2484733344440647604"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="1464" />
+        duration="1815" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="373" />
+        duration="861" />
     <task
         name="verifier"
-        duration="125" />
+        duration="1" />
 
     <artifact
-        location="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\outputs\apk\Fileexplorer-debug.apk"
+        location="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\outputs\apk\Fileexplorer-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="354765200476558"
+        timestamp="179628330860789"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\outputs\apk\Fileexplorer-debug.apk"
+            location="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\outputs\apk\Fileexplorer-debug.apk"
             type="MAIN" />
     </build>
 

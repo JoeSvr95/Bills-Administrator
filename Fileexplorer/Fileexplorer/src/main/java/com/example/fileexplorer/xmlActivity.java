@@ -19,9 +19,22 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import java.io.InputStream;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.TextView;
+
 
 public class xmlActivity extends Activity implements ActionBar.TabListener {
 
@@ -44,6 +57,8 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
     private ViewPager mViewPager;
     //-->SE CREO ESTE ARRAYLIST ESTATICO PARA PODER USARLO EN LA CLASE PlaceHolderFragment
     public static ArrayList<Archivo> archivosXML;
+    //-->SE CREO ESTE ARRAYLIST ESTATICO PARA PODER GUARDAR TODA LA INFORMACION DE LAS FACTURAS COMO OBJETOS FACTURAS
+    public static ArrayList<Factura> listaFacturas = new ArrayList<Factura>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,6 +185,50 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
             // ESTA ES LA PARTE QUE DEBE CAMBIAR SEGUN LO QUE QUIERAN PRESENTAR EN PANTALLA PARA CADA ARCHIVO XML
             // EN ESTE CASO DECIDI QUE SIMPLEMENTE SE PRESENTE POR PANTALLA TODOS LOS DATOS DEL ARCHIVO XML
             try {
+                InputStream is = new FileInputStream(f);
+                String text="";
+                DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+                Document doc = dBuilder.parse(is);
+
+                Element element=doc.getDocumentElement();
+                element.normalize();
+
+                NodeList nList = doc.getElementsByTagName("estado");
+                Node node =nList.item(0);
+                Element element2 = (Element) node;
+                text+="Estado:\t"+element2.getTextContent();
+                nList = doc.getElementsByTagName("numeroAutorizacion");
+                node =nList.item(0);
+                element2 = (Element) node;
+                text+="\nnumeroAutorizacion:\t"+element2.getTextContent();
+                nList = doc.getElementsByTagName("fechaAutorizacion");
+                node =nList.item(0);
+                element2 = (Element) node;
+                text+="\nfechaAutorizacion:\t"+element2.getTextContent();
+                textView.setText(text);
+                return rootView;
+                /*
+                for (int i=0; i<nList.getLength(); i++) {
+
+                    Node node1 = nList.item(i);
+                    if (node.getNodeType() == Node.ELEMENT_NODE) {
+                        Element element2 = (Element) node;
+                        String x = element2.getTextContent();
+                        textView.setText("Razon Social:\t"+ x);
+                        return rootView;
+                        /*
+                        tv1.setText(tv1.getText()+"\nName : " + getValue("name", element2)+"\n");
+                        tv1.setText(tv1.getText()+"Surname : " + getValue("surname", element2)+"\n");
+                        tv1.setText(tv1.getText()+"-----------------------");
+                    }
+                }*/
+
+            } catch (Exception e) {e.printStackTrace();}
+
+
+            /*
+            try {
                 Scanner sc=new Scanner(f);
                 String dataXML="";
                 while(sc.hasNextLine())
@@ -178,7 +237,7 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
                 return rootView;
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-            }
+            }*/
          return null;
         }
     }
@@ -187,6 +246,12 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
+    private static String getValue(String tag, Element element) {
+        NodeList nodeList = element.getElementsByTagName(tag).item(0).getChildNodes();
+        Node node = nodeList.item(0);
+        return node.getNodeValue();
+    }
+
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
