@@ -8,8 +8,9 @@ import java.util.LinkedList;
  */
 
 public class Factura {
+    private String estado;
     private String autorizacion;
-    private int numeroAutorizacion;
+    private String numeroAutorizacion;
     private String fechaAutorizacion;
     private String ambiente;
     private String razonSocial;
@@ -30,11 +31,11 @@ public class Factura {
     private HashMap <String,Float> totalConImpuestos; // Aqui van los valores de los impuestos (0%,12%,14%) (tarifa0-tarifa12)
     private float importeTotal; //Valor total a pagar.
     private float propina; // La propina , de haber dejado.
-    private LinkedList<Producto> prod; // Un linked list de productos
+    private LinkedList<Producto> productos; // Un linked list de productos
 
     public Factura() {
         this.autorizacion = null;
-        this.numeroAutorizacion = 0;
+        this.numeroAutorizacion = null;
         this.fechaAutorizacion = null;
         this.ambiente = null;
         this.razonSocial = null;
@@ -55,7 +56,7 @@ public class Factura {
         this.totalConImpuestos = new HashMap <String,Float>();
         this.importeTotal = 0;
         this.propina = 0;
-        this.prod = new LinkedList<Producto>();
+        this.productos = new LinkedList<Producto>();
     }
 
     public String getAutorizacion() {
@@ -66,11 +67,11 @@ public class Factura {
         this.autorizacion = autorizacion;
     }
 
-    public int getNumeroAutorizacion() {
+    public String getNumeroAutorizacion() {
         return numeroAutorizacion;
     }
 
-    public void setNumeroAutorizacion(int numeroAutorizacion) {
+    public void setNumeroAutorizacion(String numeroAutorizacion) {
         this.numeroAutorizacion = numeroAutorizacion;
     }
 
@@ -234,14 +235,19 @@ public class Factura {
         this.propina = propina;
     }
 
-    public LinkedList<Producto> getProd() {
-        return prod;
+    public LinkedList<Producto> getProductos() {
+        return productos;
     }
 
-    public void setProd(Producto prod) {
-        this.prod.addLast(prod);
+    public void setProductos(Producto productos) {
+        this.productos.addLast(productos);
     }
 
+    public String getEstado() {
+        return estado;
+    }
 
-
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 }

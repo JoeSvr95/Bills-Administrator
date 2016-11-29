@@ -11,9 +11,6 @@ public class Producto {
     private float precioUnitario;
     private float descuento;
     private float precioTotalSinImpuesto;
-    private int tarifa;
-    private float impuesto; // El impuesto individual de ese objeto
-    private float total;
 
     public Producto() {
         this.codigoPrincipal = null;
@@ -22,9 +19,7 @@ public class Producto {
         this.precioUnitario = 0;
         this.descuento = 0;
         this.precioTotalSinImpuesto = 0;
-        this.tarifa = 0;
-        this.impuesto = 0;
-        this.total = this.impuesto + this.precioTotalSinImpuesto;
+
     }
 
     public String getCodigoPrincipal() {
@@ -75,27 +70,5 @@ public class Producto {
         this.precioTotalSinImpuesto = precioTotalSinImpuesto;
     }
 
-    public int getTarifa() {
-        return tarifa;
-    }
 
-    public void setTarifa(int tarifa) {
-        this.tarifa = tarifa;
-    }
-
-    public float getImpuesto() {
-        return impuesto;
-    }
-
-    public void setImpuesto(float impuesto) {
-        this.impuesto = impuesto;
-    }
-
-    public float getTotal() {
-        return total;
-    }
-
-    public void setTotal(float total) {
-        this.total = total;
-    }
 }

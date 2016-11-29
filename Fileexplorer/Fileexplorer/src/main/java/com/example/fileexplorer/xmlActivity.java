@@ -185,6 +185,7 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
             // ESTA ES LA PARTE QUE DEBE CAMBIAR SEGUN LO QUE QUIERAN PRESENTAR EN PANTALLA PARA CADA ARCHIVO XML
             // EN ESTE CASO DECIDI QUE SIMPLEMENTE SE PRESENTE POR PANTALLA TODOS LOS DATOS DEL ARCHIVO XML
             try {
+                Factura fact = new Factura();
                 InputStream is = new FileInputStream(f);
                 String text="";
                 DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -197,15 +198,121 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
                 NodeList nList = doc.getElementsByTagName("estado");
                 Node node =nList.item(0);
                 Element element2 = (Element) node;
-                text+="Estado:\t"+element2.getTextContent();
+                fact.setEstado(element2.getTextContent());
+                text+="INFORMACION TRIBUTARIA\nEstado:\t"+fact.getEstado();
+
                 nList = doc.getElementsByTagName("numeroAutorizacion");
                 node =nList.item(0);
                 element2 = (Element) node;
-                text+="\nnumeroAutorizacion:\t"+element2.getTextContent();
+                fact.setNumeroAutorizacion(element2.getTextContent());
+                text+="\n# de Autorizacion:\t"+fact.getNumeroAutorizacion();
+
                 nList = doc.getElementsByTagName("fechaAutorizacion");
                 node =nList.item(0);
                 element2 = (Element) node;
-                text+="\nfechaAutorizacion:\t"+element2.getTextContent();
+                fact.setFechaAutorizacion(element2.getTextContent());
+                text+="\nFecha de Autorizacion:\t"+fact.getFechaAutorizacion();
+
+                nList = doc.getElementsByTagName("infoTributaria");
+                node =nList.item(0);
+                element2 = (Element) node;
+                nList = element2.getElementsByTagName("razonSocial");
+                node = nList.item(0);
+                element2 = (Element) node;
+                fact.setRazonSocial(element2.getTextContent());
+                text+="\nRazon Social:\t"+fact.getRazonSocial();
+
+                nList = doc.getElementsByTagName("infoTributaria");
+                node =nList.item(0);
+                element2 = (Element) node;
+                nList = element2.getElementsByTagName("ruc");
+                node = nList.item(0);
+                element2 = (Element) node;
+                fact.setRuc(element2.getTextContent());
+                text+="\nRuc:\t"+fact.getRuc();
+
+                nList = doc.getElementsByTagName("infoTributaria");
+                node =nList.item(0);
+                element2 = (Element) node;
+                nList = element2.getElementsByTagName("dirMatriz");
+                node = nList.item(0);
+                element2 = (Element) node;
+                fact.setDirMatriz(element2.getTextContent());
+                text+="\nDireccion Matriz:\t"+fact.getDirMatriz();
+
+                //AQUI EMPIEZA INFORMACION DE LA FACTURA
+                nList = doc.getElementsByTagName("infoFactura");
+                node =nList.item(0);
+                element2 = (Element) node;
+                nList = element2.getElementsByTagName("fechaEmision");
+                node = nList.item(0);
+                element2 = (Element) node;
+                fact.setFechaEmision(element2.getTextContent());
+                text+="\n\nINFORMACION FACTURA\nFecha de Emision:\t"+fact.getFechaEmision();
+
+                nList = doc.getElementsByTagName("infoFactura");
+                node =nList.item(0);
+                element2 = (Element) node;
+                nList = element2.getElementsByTagName("dirEstablecimiento");
+                node = nList.item(0);
+                element2 = (Element) node;
+                fact.setEstab(element2.getTextContent());
+                text+="\nDireccion Establecimiento:\t"+fact.getEstab();
+
+                nList = doc.getElementsByTagName("infoFactura");
+                node =nList.item(0);
+                element2 = (Element) node;
+                nList = element2.getElementsByTagName("razonSocialComprador");
+                node = nList.item(0);
+                element2 = (Element) node;
+                fact.setRazonSocialComprador(element2.getTextContent());
+                text+="\nRazon Social Comprador:\t"+fact.getRazonSocial();
+
+                nList = doc.getElementsByTagName("infoFactura");
+                node =nList.item(0);
+                element2 = (Element) node;
+                nList = element2.getElementsByTagName("identificacionComprador");
+                node = nList.item(0);
+                element2 = (Element) node;
+                fact.setIdentificacionComprador(element2.getTextContent());
+                text+="\nCedula/Ruc:\t"+fact.getIdentificacionComprador();
+
+
+                text+="\n"+String.format("%s%25s%20s%10s","Producto","Cantidad","P.Unitario","Total");
+                nList = doc.getElementsByTagName("detalles");
+                node =nList.item(0);
+                element2 = (Element) node;
+                nList = element2.getElementsByTagName("detalle");
+                for (int i=0 ; i<nList.getLength();i++){
+                    Producto pro = new Producto();
+                    node = nList.item(i);
+                    Element element3 = (Element) node;
+                    NodeList nList2 = element3.getElementsByTagName("descripcion");
+                    node =nList2.item(0);
+                    element2 = (Element) node;
+                    pro.setDescripcion(element2.getTextContent());
+
+
+                    nList2 = element3.getElementsByTagName("cantidad");
+                    node =nList2.item(0);
+                    element2 = (Element) node;
+                    pro.setCantidad(element2.getTextContent());
+
+                    nList2 = element3.getElementsByTagName("precioUnitario");
+                    node =nList2.item(0);
+                    element2 = (Element) node;
+                    pro.setPrecioUnitario(Float.parseFloat(element2.getTextContent()));
+
+                    nList2 = element3.getElementsByTagName("precioTotalSinImpuesto");
+                    node =nList2.item(0);
+                    element2 = (Element) node;
+                    pro.setPrecioTotalSinImpuesto(Float.parseFloat(element2.getTextContent()));
+                    int x= 25-(pro.getDescripcion().length());
+                    text+="\n"+String.format("%s%"+x+"s%20s%10s",pro.getDescripcion(),pro.getCantidad(),pro.getPrecioUnitario(),pro.getPrecioTotalSinImpuesto());
+                    fact.setProductos(pro);
+                }
+
+                //listaFacturas.add(fact);
                 textView.setText(text);
                 return rootView;
                 /*
@@ -224,7 +331,9 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
                     }
                 }*/
 
-            } catch (Exception e) {e.printStackTrace();}
+            } catch (Exception e) {
+                textView.setText("Falle, soy una desgracia");
+                e.printStackTrace();}
 
 
             /*
