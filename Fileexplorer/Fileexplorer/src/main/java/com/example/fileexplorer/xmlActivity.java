@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.io.File;
@@ -200,6 +201,7 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_xml, container, false);
+
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             //AQUI SE GENERA UN OBJETO ARCHIVO,SE LO EXTRAE DEL ARRAYLIST QUE LO DEVOLVIO FileExplorerActivity
             // PARA SACAR CADA ELEMENTO EN ORDEN SE UTILIZA EL METODO getArguments CON ARG_SECTION_NUMBER, ESTE COMIENZA DESDE 1
