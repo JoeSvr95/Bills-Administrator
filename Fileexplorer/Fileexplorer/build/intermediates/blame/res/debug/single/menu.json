@@ -1,10 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\res\\merged\\debug\\menu\\activity_fileexplorer.xml",
-        "source": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\src\\main\\res\\menu\\activity_fileexplorer.xml"
+        "merged": "C:\\Users\\Luigi\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\res\\merged\\debug\\menu\\menu_xml.xml",
+        "source": "C:\\Users\\Luigi\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\src\\main\\res\\menu\\menu_xml.xml"
     },
     {
-        "merged": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\res\\merged\\debug\\menu\\menu_xml.xml",
-        "source": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\src\\main\\res\\menu\\menu_xml.xml"
+        "merged": "C:\\Users\\Luigi\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\res\\merged\\debug\\menu\\activity_fileexplorer.xml",
+        "source": "C:\\Users\\Luigi\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\src\\main\\res\\menu\\activity_fileexplorer.xml"
     }
 ]
