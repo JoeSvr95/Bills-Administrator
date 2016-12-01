@@ -3,57 +3,57 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Luigi\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\support-v4-19.1.0_823c53337dc5cd0ee43f892deca6329e8213e841.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Luigi\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v3.0.1\369f9aa48a629b4e92557b37326f42dc3de796e4\MPAndroidChart-v3.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="369f9aa48a629b4e92557b37326f42dc3de796e4">
-        <dex dex="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\MPAndroidChart-v3.0.1_49186acfc5e3d697c1becb6d7c67331c6c4a5c08.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
-        <dex dex="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-19.1.0_8cd6d530ef229cb95f9f966b2c860eec18b54b04.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="5febd3abe77bbc8f24485b6559f9542b165e7b6d">
-        <dex dex="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\instant-run_8f656fe842f72eb8d25d6234cb7e71411fbb4fe9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Luigi\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v13\19.1.0\support-v13-19.1.0.jar"
+        jar="C:\Users\HOME\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v13\19.1.0\support-v13-19.1.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="6b852a232f642c75a7fdfc7212b841b8c8f8959c">
-        <dex dex="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\support-v13-19.1.0_282ec899b8a924c3b41a98947ecddb07e5545be0.jar" />
+        <dex dex="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\support-v13-19.1.0_ee2a6379b1f97459e39b1f91f9d517959e1f069e.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="afc47fac235f6bc85a9cee211a7098c205e567b2">
-        <dex dex="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\instant-run-bootstrap_b37b195f9ee9d09e380c180ed269d35c512b6204.jar" />
+        sha1="0ca2392ce70d162a976daf067bb70db674686725">
+        <dex dex="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\instant-run-bootstrap_ecdf7347b3af8abe6588fef4d0082ad40ca96fd7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
+        <dex dex="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-19.1.0_f0cf00039f5289868c26d470324370e52aa0679f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\HOME\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\support-v4-19.1.0_351b656c99eaa3f57bec18192f5fb849f13297f8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9470408696c6228847362f5f1f949e3c423c023c">
+        <dex dex="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\instant-run_7b1862440768286972ece2b947dbe66b6f8415b0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\HOME\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v3.0.1\369f9aa48a629b4e92557b37326f42dc3de796e4\MPAndroidChart-v3.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="369f9aa48a629b4e92557b37326f42dc3de796e4">
+        <dex dex="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\MPAndroidChart-v3.0.1_ccc4b6c3aeb9362ea5fc8cece2da1ead0fba4159.jar" />
     </item>
 
 </items>

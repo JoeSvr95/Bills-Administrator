@@ -150,6 +150,22 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
                 Intent j = new Intent(this, Deducibles.class);
                 startActivity(j);
                 return true;
+            case R.id.barras:
+                if (item.isChecked())
+                    item.setChecked(false);
+                else
+                    item.setChecked(true);
+                Intent k = new Intent(this, Barras.class);
+
+                k.putExtra("alimentos",listaAlimentos);
+                k.putExtra("vivienda",listaVivienda);
+                k.putExtra("medicina",listaMedicina);
+                k.putExtra("educacion",listaEducacion);
+                k.putExtra("vestimenta",listaVestimenta);
+                k.putExtra("otros",listaAlimentos);
+
+                startActivity(k);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
