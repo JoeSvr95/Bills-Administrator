@@ -37,12 +37,6 @@ public class Graficos extends Activity {
         educacion = (ArrayList<Float>) getIntent().getSerializableExtra("educacion");
         vestimenta = (ArrayList<Float>) getIntent().getSerializableExtra("vestimenta");
         otros = (ArrayList<Float>) getIntent().getSerializableExtra("otros");
-        alimentos.add(2.3f);
-        vivienda.add(3.5f);
-        medicina.add(4.5f);
-        educacion.add(5.5f);
-        vestimenta.add(1.2f);
-        otros.add(3.5f);
 
 
         PieChart pieChart = (PieChart) findViewById(R.id.piechart);

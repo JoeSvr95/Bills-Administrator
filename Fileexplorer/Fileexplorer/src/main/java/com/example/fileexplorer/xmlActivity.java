@@ -27,6 +27,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import java.io.InputStream;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
@@ -60,7 +63,7 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
     //-->SE CREO ESTE ARRAYLIST ESTATICO PARA PODER USARLO EN LA CLASE PlaceHolderFragment
     public static ArrayList<Archivo> archivosXML;
     //-->SE CREO ESTE ARRAYLIST ESTATICO PARA PODER GUARDAR TODA LA INFORMACION DE LAS FACTURAS COMO OBJETOS FACTURAS
-    public ArrayList<Float> listaAlimentos = new ArrayList<Float>();
+    public static ArrayList<Float> listaAlimentos = new ArrayList<Float>();
     public static ArrayList<Float> listaMedicina = new ArrayList<Float>();
     public static ArrayList<Float> listaVivienda = new ArrayList<Float>();
     public static ArrayList<Float> listaEducacion = new ArrayList<Float>();
@@ -148,6 +151,13 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
                 else
                     item.setChecked(true);
                 Intent j = new Intent(this, Deducibles.class);
+                j.putExtra("alimentos",listaAlimentos);
+                j.putExtra("vivienda",listaVivienda);
+                j.putExtra("medicina",listaMedicina);
+                j.putExtra("educacion",listaEducacion);
+                j.putExtra("vestimenta",listaVestimenta);
+                j.putExtra("otros",listaOtros);
+
                 startActivity(j);
                 return true;
             case R.id.barras:
@@ -197,6 +207,13 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
 
         //ESTE ES UN STRING QUE PERMITE SACAR LOS INDICES DE CADA TAB O EN ESTE CASO, DE CADA ELEMENTO DEL ARRAYLIST
         private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public String regFood="TOSTACHOS|ZANAHORIA|APANADURA";
+        public String regMed="";
+        public String regViv="MACETERO(.)*|OLLA(.)*|PLASTICO(.)*";
+        public String regEd="";
+        public String regVest="";
+
 
         public PlaceholderFragment() {
         }
@@ -391,6 +408,42 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
                 fact.calcularImporte();
                 text+="\n"+String.format("%s%"+d+"s","TOTAL A PAGAR: ",fact.getImporteTotal());
                 //listaFacturas.add(fact);
+
+                //COMPROBACION DE EXPRESION REGULAR
+                Pattern pal= Pattern.compile(regFood);
+                Pattern pme= Pattern.compile(regMed);
+                Pattern pviv= Pattern.compile(regViv);
+                Pattern pves= Pattern.compile(regVest);
+                Pattern ped= Pattern.compile(regEd);
+
+
+                for(Producto prod:fact.getProductos()) {
+                    Matcher mal = pal.matcher(prod.getDescripcion());
+                    Matcher mmed = pme.matcher(prod.getDescripcion());
+                    Matcher mviv = pviv.matcher(prod.getDescripcion());
+                    Matcher mves = pves.matcher(prod.getDescripcion());
+                    Matcher med = ped.matcher(prod.getDescripcion());
+                    Float prodTotal=prod.getPrecioUnitario()*Float.parseFloat(prod.getCantidad());
+                    if(mal.matches()){
+                        listaAlimentos.add(prodTotal-(prodTotal*prod.getDescuento()));
+                    }
+                    else if(mmed.matches()){
+                        listaMedicina.add(prodTotal-(prodTotal*prod.getDescuento()));
+                    }
+                    else if(mviv.matches()){
+                        listaVivienda.add(prodTotal-(prodTotal*prod.getDescuento()));
+                    }
+                    else if(mves.matches()){
+                        listaVestimenta.add(prodTotal-(prodTotal*prod.getDescuento()));
+                    }
+                    else if(med.matches()){
+                        listaEducacion.add(prodTotal-(prodTotal*prod.getDescuento()));
+                    }
+                    else{
+                        listaOtros.add(prodTotal-(prodTotal*prod.getDescuento()));
+                    }
+                }
+
                 textView.setText(text);
                 return rootView;
                 /*

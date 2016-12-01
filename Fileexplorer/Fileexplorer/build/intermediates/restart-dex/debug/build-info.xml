@@ -2,35 +2,35 @@
 <instant-run
     abi="x86"
     api-level="19"
-    density="xxhdpi"
+    density="xhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="18566949755735"
-    token="-2484733344440647604"
+    timestamp="555093900200021"
+    token="-1913963993759200537"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="639" />
+        duration="16839" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="581" />
+        duration="3857" />
     <task
         name="verifier"
-        duration="76" />
+        duration="1592" />
 
     <artifact
-        location="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\outputs\apk\Fileexplorer-debug.apk"
+        location="C:\Users\pc\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\outputs\apk\Fileexplorer-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="18566949755735"
+        timestamp="555093900200021"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\Luigi\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\outputs\apk\Fileexplorer-debug.apk"
+            location="C:\Users\pc\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\outputs\apk\Fileexplorer-debug.apk"
             type="MAIN" />
     </build>
 
