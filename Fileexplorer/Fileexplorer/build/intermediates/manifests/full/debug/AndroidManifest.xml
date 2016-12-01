@@ -45,6 +45,8 @@
         <activity
             android:name="com.example.fileexplorer.xmlActivity"
             android:label="@string/title_activity_xml" />
+        <activity android:name="com.example.fileexplorer.Graficos" />
+        <activity android:name="com.example.fileexplorer.Deducibles" />
     </application>
 
 </manifest>

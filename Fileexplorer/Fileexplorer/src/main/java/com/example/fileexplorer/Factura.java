@@ -28,7 +28,7 @@ public class Factura {
     private String identificacionComprador;
     private float  totalSinImpuestos; //El valor de la compra antes de agregar los impuestos
     private float totalDescuento; // El descuento que se va a restar a el valor de la compra
-    private HashMap <String,Float> totalConImpuestos; // Aqui van los valores de los impuestos (0%,12%,14%) (tarifa0-tarifa12)
+    private HashMap <String,Float> impuestos; // Aqui van los valores de los impuestos (0%,12%,14%) (tarifa0-tarifa12)
     private float importeTotal; //Valor total a pagar.
     private float propina; // La propina , de haber dejado.
     private LinkedList<Producto> productos; // Un linked list de productos
@@ -53,7 +53,7 @@ public class Factura {
         this.identificacionComprador = null;
         this.totalSinImpuestos = 0;
         this.totalDescuento = 0;
-        this.totalConImpuestos = new HashMap <String,Float>();
+        this.impuestos = new HashMap <String,Float>();
         this.importeTotal = 0;
         this.propina = 0;
         this.productos = new LinkedList<Producto>();
@@ -211,12 +211,12 @@ public class Factura {
         this.totalDescuento = totalDescuento;
     }
 
-    public HashMap<String, Float> getTotalConImpuestos() {
-        return totalConImpuestos;
+    public HashMap<String, Float> getImpuestos() {
+        return impuestos;
     }
 
-    public void setTotalConImpuestos(String tarifa,float valor) {
-        this.totalConImpuestos.put(tarifa,valor);
+    public void setImpuestos(String tarifa,float valor) {
+        this.impuestos.put(tarifa,valor);
     }
 
     public float getImporteTotal() {
@@ -250,4 +250,11 @@ public class Factura {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+    public void calcularImporte(){
+        for(float i : this.impuestos.values()){
+            this.importeTotal+=i;
+        }
+        this.importeTotal+=this.getTotalSinImpuestos();
+    }
 }
+

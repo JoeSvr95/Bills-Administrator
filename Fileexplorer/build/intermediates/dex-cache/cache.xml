@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="6908c395434372e2f69324114a9e1e6ba13a6665">
+        sha1="6707b50e9db58b8f82abe43732b7e1dd428f1fd1">
         <dex dex="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\instant-run-bootstrap_ecdf7347b3af8abe6588fef4d0082ad40ca96fd7.jar" />
     </item>
     <item
@@ -43,8 +43,17 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="30cb7feac767724de86a789f840fdfbb33963c42">
+        sha1="9256e02dd180b2192632393d79015a6e1f4aa191">
         <dex dex="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\instant-run_7b1862440768286972ece2b947dbe66b6f8415b0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\HOME\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v3.0.1\369f9aa48a629b4e92557b37326f42dc3de796e4\MPAndroidChart-v3.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="369f9aa48a629b4e92557b37326f42dc3de796e4">
+        <dex dex="C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\pre-dexed\debug\MPAndroidChart-v3.0.1_ccc4b6c3aeb9362ea5fc8cece2da1ead0fba4159.jar" />
     </item>
 
 </items>

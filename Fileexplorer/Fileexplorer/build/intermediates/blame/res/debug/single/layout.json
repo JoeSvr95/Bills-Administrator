@@ -28,6 +28,10 @@
         "source": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
+        "merged": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\res\\merged\\debug\\layout\\activity_graficos.xml",
+        "source": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\src\\main\\res\\layout\\activity_graficos.xml"
+    },
+    {
         "merged": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_tab.xml",
         "source": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_bar_tab.xml"
     },
@@ -38,6 +42,10 @@
     {
         "merged": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\res\\merged\\debug\\layout\\activity_deducibles.xml",
+        "source": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\src\\main\\res\\layout\\activity_deducibles.xml"
     },
     {
         "merged": "C:\\Users\\HOME\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",

@@ -1,9 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.fileexplorer.xmlActivity">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings" />
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/grafios"
+            android:orderInCategory="1"
+            app:showAsAction="never"
+            android:title="@string/Graficos" />
+        <item
+            android:id="@+id/deducibles"
+            android:orderInCategory="1"
+            app:showAsAction="never"
+            android:title="@string/deducibles" />
+    </group>
 </menu>

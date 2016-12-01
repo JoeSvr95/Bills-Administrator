@@ -7,6 +7,7 @@ import android.app.FragmentTransaction;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
@@ -58,7 +59,13 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
     //-->SE CREO ESTE ARRAYLIST ESTATICO PARA PODER USARLO EN LA CLASE PlaceHolderFragment
     public static ArrayList<Archivo> archivosXML;
     //-->SE CREO ESTE ARRAYLIST ESTATICO PARA PODER GUARDAR TODA LA INFORMACION DE LAS FACTURAS COMO OBJETOS FACTURAS
-    public static ArrayList<Factura> listaFacturas = new ArrayList<Factura>();
+    public ArrayList<Float> listaAlimentos = new ArrayList<Float>();
+    public static ArrayList<Float> listaMedicina = new ArrayList<Float>();
+    public static ArrayList<Float> listaVivienda = new ArrayList<Float>();
+    public static ArrayList<Float> listaEducacion = new ArrayList<Float>();
+    public static ArrayList<Float> listaVestimenta = new ArrayList<Float>();
+    public static ArrayList<Float> listaOtros = new ArrayList<Float>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +113,6 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -116,17 +122,36 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.grafios:
+                if (item.isChecked())
+                    item.setChecked(false);
+                else
+                    item.setChecked(true);
+
+                Intent i = new Intent(this, Graficos.class);
+
+                i.putExtra("alimentos",listaAlimentos);
+                i.putExtra("vivienda",listaVivienda);
+                i.putExtra("medicina",listaMedicina);
+                i.putExtra("educacion",listaEducacion);
+                i.putExtra("vestimenta",listaVestimenta);
+                i.putExtra("otros",listaAlimentos);
+
+                startActivity(i);
+                return true;
+            case R.id.deducibles:
+                if (item.isChecked())
+                    item.setChecked(false);
+                else
+                    item.setChecked(true);
+                Intent j = new Intent(this, Deducibles.class);
+                startActivity(j);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -308,10 +333,45 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
                     element2 = (Element) node;
                     pro.setPrecioTotalSinImpuesto(Float.parseFloat(element2.getTextContent()));
                     int x= 25-(pro.getDescripcion().length());
+                    fact.setTotalSinImpuestos(fact.getTotalSinImpuestos()+pro.getPrecioTotalSinImpuesto());
                     text+="\n"+String.format("%s%"+x+"s%20s%10s",pro.getDescripcion(),pro.getCantidad(),pro.getPrecioUnitario(),pro.getPrecioTotalSinImpuesto());
                     fact.setProductos(pro);
                 }
 
+                String j = fact.getTotalSinImpuestos()+"";
+                int y = 44-j.length();
+                text+="\n"+String.format("%s%"+y+"s","\nTOTAL SIN IMPUESTOS:",fact.getTotalSinImpuestos());
+                nList = doc.getElementsByTagName("infoFactura");
+                node =nList.item(0);
+                element2 = (Element) node;
+                nList = element2.getElementsByTagName("totalConImpuestos");
+                node =nList.item(0);
+                element2 = (Element) node;
+                nList = element2.getElementsByTagName("totalImpuesto");
+                for (int i=0 ; i<nList.getLength();i++){
+                    node = nList.item(i);
+                    Element element3 = (Element) node;
+                    NodeList nList2 = element3.getElementsByTagName("tarifa");
+                    node =nList2.item(0);
+                    element2 = (Element) node;
+                    String tarifa = ""+(Integer.parseInt(element2.getTextContent()));
+
+                    nList2 = element3.getElementsByTagName("valor");
+                    node =nList2.item(0);
+                    element2 = (Element) node;
+                    Float valor = Float.parseFloat(element2.getTextContent());
+                    fact.setImpuestos(tarifa,valor);
+                    int z = 76-valor.toString().length()-tarifa.length();
+                    text+="\n"+String.format("%s%"+z+"s","IVA %"+tarifa+":",valor);
+                }
+
+                String a = fact.getPropina()+"";
+                int b = 70-a.length();
+                text+="\n"+String.format("%s%"+b+"s","PROPINA:",fact.getPropina());
+                String c = fact.getImporteTotal()+"";
+                int d = 56-c.length();
+                fact.calcularImporte();
+                text+="\n"+String.format("%s%"+d+"s","TOTAL A PAGAR: ",fact.getImporteTotal());
                 //listaFacturas.add(fact);
                 textView.setText(text);
                 return rootView;

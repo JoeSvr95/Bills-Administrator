@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:2:1-50:12
+ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:2:1-52:12
 	package
 		ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:3:5-39
 		INJECTED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml
@@ -39,7 +39,7 @@ ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Filee
 	android:name
 		ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:14:30-80
 application
-ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:16:5-48:19
+ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:16:5-50:19
 MERGED from [com.android.support:appcompat-v7:19.1.0] C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\AndroidManifest.xml:19:5-20
 	android:label
 		ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:18:9-41
@@ -86,8 +86,16 @@ ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Filee
 	android:name
 		ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:38:19-47
 activity#com.example.fileexplorer.xmlActivity
-ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:45:9-47:67
+ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:45:9-47:58
 	android:label
 		ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:47:13-55
 	android:name
 		ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:46:13-40
+activity#com.example.fileexplorer.Graficos
+ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:48:9-46
+	android:name
+		ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:48:19-43
+activity#com.example.fileexplorer.Deducibles
+ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:49:9-57
+	android:name
+		ADDED from C:\Users\HOME\Documents\GitHub\Bills-Administrator\Fileexplorer\Fileexplorer\src\main\AndroidManifest.xml:49:19-45

@@ -44,7 +44,9 @@
         </activity>
         <activity
             android:name=".xmlActivity"
-            android:label="@string/title_activity_xml"></activity>
+            android:label="@string/title_activity_xml" />
+        <activity android:name=".Graficos" />
+        <activity android:name=".Deducibles"></activity>
     </application>
 
 </manifest>
