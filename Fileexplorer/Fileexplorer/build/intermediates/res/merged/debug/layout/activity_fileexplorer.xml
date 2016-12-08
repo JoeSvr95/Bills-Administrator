@@ -46,6 +46,25 @@
 			android:layout_below="@+id/skipButton"
 			android:layout_alignParentStart="true"
 			android:onClick="addXML" />
+
+		<Button
+			android:text="add"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/button"
+			android:layout_below="@+id/skipButton"
+			android:layout_alignParentStart="true"
+			android:onClick="addXML" />
+
+		<Button
+			android:text="Remove From Stack"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignTop="@+id/addButton"
+			android:layout_toEndOf="@+id/addButton"
+			android:layout_marginStart="36dp"
+			android:id="@+id/button2"
+			android:onClick="removeFile" />
 	</RelativeLayout>
 
 	<ListView

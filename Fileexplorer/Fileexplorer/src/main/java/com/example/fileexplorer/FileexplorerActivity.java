@@ -57,6 +57,12 @@ public class FileexplorerActivity extends Activity {
         a.notifyDataSetChanged();
     }
 
+    public void removeFile(View view){
+        if(!datosArchivos.isEmpty())
+            datosArchivos.remove(datosArchivos.size()-1);
+            a.notifyDataSetChanged();
+    }
+
     //NOTEN QUE LOS DATOS QUE ESTA EN EL ARRAYLIST DATOS ARCHIVOS SON LOS MISMO QUE EL DEL LISTVIEW
     //ESTE METODO GENERA UN INTENT QUE SE CARGA CON EL ARRAYLIST DE LOS OBJETOS ARCHIVO, CON LA INFORMACION DE CADA NOMBRE Y DIRECTORIO DE CADA XML
     //ESTE METODO SE PASA AL ACTIVITY xmlActivity

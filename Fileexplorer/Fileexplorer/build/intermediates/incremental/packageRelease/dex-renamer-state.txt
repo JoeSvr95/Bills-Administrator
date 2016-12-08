@@ -1,0 +1,4 @@
+#Thu Dec 01 10:58:41 COT 2016
+base.0=C\:\\Users\\pc\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=C\:\\Users\\pc\\Documents\\GitHub\\Bills-Administrator\\Fileexplorer\\Fileexplorer\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main\\classes.dex

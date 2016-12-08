@@ -22,11 +22,6 @@
             android:name="com.example.fileexplorer.FileexplorerActivity"
             android:label="@string/title_activity_fileexplorer"
             android:theme="@android:style/Theme.Holo" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.example.fileexplorer.FileChooser"

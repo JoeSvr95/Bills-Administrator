@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,7 +24,9 @@ import android.widget.TextView;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import java.io.InputStream;
@@ -32,6 +35,13 @@ import java.util.regex.Pattern;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.ss.usermodel.Row;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -39,7 +49,11 @@ import org.w3c.dom.NodeList;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.apache.poi.*;
+
+import static android.content.ContentValues.TAG;
 
 public class xmlActivity extends Activity implements ActionBar.TabListener {
 
@@ -69,15 +83,41 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
     public static ArrayList<Float> listaEducacion = new ArrayList<Float>();
     public static ArrayList<Float> listaVestimenta = new ArrayList<Float>();
     public static ArrayList<Float> listaOtros = new ArrayList<Float>();
+    public static ArrayList<String> alimentosSheet;
+    public static ArrayList<String> medicinaSheet;
+    public static ArrayList<String> viviendaSheet;
+    public static ArrayList<String> educacionSheet;
+    public static ArrayList<String> vestimentaSheet;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xml);
-
         //--->DEVOLUCION DEL INTENT DEL ACTIVITY FileexplorerActivity DEL ARRAYLIST DE OBJETOS "ARCHIVO" PARA EXTRAER EL NOMBRE Y DIRECTORIO DE CADA ARCHIVO SELECCIONADO
         archivosXML=getIntent().getExtras().getParcelableArrayList("xmlList");
+        try {
+            FileInputStream myInput = new FileInputStream(new File("Base_medicamentos_29.11.2016.xlsx"));
+
+            // Create a POIFSFileSystem object
+            POIFSFileSystem myFileSystem = new POIFSFileSystem(myInput);
+
+            // Create a workbook using the File System
+            HSSFWorkbook myWorkBook = new HSSFWorkbook(myFileSystem);
+
+            // Get the first sheet from workbook
+            HSSFSheet mySheet = myWorkBook.getSheetAt(0);
+
+            /** We now need something to iterate through the cells.**/
+            Iterator rowIter = mySheet.rowIterator();
+
+            while (rowIter.hasNext()) {
+                HSSFRow myRow = (HSSFRow) rowIter.next();
+                medicinaSheet.add(myRow.getCell(0).getStringCellValue());
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -199,7 +239,7 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class PlaceholderFragment  extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
@@ -208,21 +248,18 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
         //ESTE ES UN STRING QUE PERMITE SACAR LOS INDICES DE CADA TAB O EN ESTE CASO, DE CADA ELEMENTO DEL ARRAYLIST
         private static final String ARG_SECTION_NUMBER = "section_number";
 
-        public String regFood="TOSTACHOS|ZANAHORIA|APANADURA";
-        public String regMed="";
-        public String regViv="MACETERO(.)*|OLLA(.)*|PLASTICO(.)*";
+        /** We now need something to iterate through the cells.**/
+        public String regFood="TOSTACHOS(.)*|ZANAHORIA(.)*|APANADURA(.)*|PAPA(.)*|LECHUGA(.)*|BERENJENA(.)*|FREJOL(.)*|PI(.)A(.)*|SALCHICHA(.)*|ARROZ(.)*|LENTEJON(.)*|TOMATE(.)*|CEBOLLA(.)*|PIMENTO(.)*";
+        public String regMed="RIBOTRIL(.)*|LEMONFLU(.)*|APRONAX(.)*|";
+        public String regViv="MACETERO(.)*|OLLA(.)*|PLASTICO(.)*|DESTOR(.)*|CERRAD(.)*";
         public String regEd="";
-        public String regVest="";
+        public String regVest="BLUSA(.)*|PANTALON(.)*|CAMISA(.)*|CAMISETA(.)*|ZAPATOS(.)*|VESTIDO(.)*|BOXER(.)*|INTERIOR(.)*|BERMUDA(.)*";
 
-
-        public PlaceholderFragment() {
+        public PlaceholderFragment() throws IOException {
         }
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
+
+        public static PlaceholderFragment newInstance(int sectionNumber) throws IOException {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
@@ -502,7 +539,14 @@ public class xmlActivity extends Activity implements ActionBar.TabListener {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+
+            try {
+                return PlaceholderFragment.newInstance(position + 1);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+
         }
 
         @Override

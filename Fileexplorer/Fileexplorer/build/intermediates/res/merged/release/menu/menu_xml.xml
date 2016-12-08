@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.fileexplorer.xmlActivity">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/grafios"
+            android:orderInCategory="1"
+            app:showAsAction="never"
+            android:title="@string/Graficos" />
+        <item
+            android:id="@+id/barras"
+            android:orderInCategory="2"
+            app:showAsAction="never"
+            android:title="@string/barras" />
+        <item
+            android:id="@+id/deducibles"
+            android:orderInCategory="3"
+            app:showAsAction="never"
+            android:title="@string/deducibles" />
+    </group>
+</menu>
